@@ -31,3 +31,25 @@ The solution efficiently counts unique length-3 palindromic subsequences by leve
 ### Complexity Analysis
 - **Time Complexity**: O(26 * n) = O(n), where `n` is the length of the string. This is because for each of the 26 possible middle characters, we potentially scan the entire string.
 - **Space Complexity**: O(1), as the space used (the boolean array `seen`) is constant and does not depend on the input size.
+
+## Example
+Consider the string `s = "aabca"`.
+
+- For middle character 'a':
+  - First occurrence: index 0
+  - Last occurrence: index 4
+  - Characters between: 'a', 'b', 'c'
+  - Unique palindromes: "aba", "aca"
+- For middle character 'b':
+  - First occurrence: index 1
+  - Last occurrence: index 1
+  - No valid range, no palindromes.
+- For middle character 'c':
+  - First occurrence: index 3
+  - Last occurrence: index 3
+  - No valid range, no palindromes.
+
+Total unique palindromic subsequences: 2 ("aba", "aca").
+
+## Conclusion
+This approach efficiently counts unique length-3 palindromic subsequences by focusing on the middle character and leveraging the properties of palindromes. It ensures that the solution is both time and space efficient, making it suitable for large input sizes.
